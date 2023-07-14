@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { CatFact } from './cat.fact.model';
+import { CatFact } from './models/cat.fact.model';
 
 @Injectable()
-export class AppService {
+export class CatService {
     private CAT_SERVICE_URL = 'https://cat-fact.herokuapp.com/facts';
 
     private transformData(data: any): CatFact {
