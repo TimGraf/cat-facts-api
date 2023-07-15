@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+  namespace: default
+spec:
+  rules:
+  -  host: kubernetes.docker.internal
+     http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: cat-facts-api
+            port:
+              number: 3000

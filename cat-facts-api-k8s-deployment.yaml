@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cat-facts-api
+  namespace: default
+  labels:
+    app: cat-facts-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cat-facts-api
+  template:
+    metadata:
+      labels:
+        app: cat-facts-api
+    spec:
+      containers:
+      - name: cat-facts-api
+        image: timgraf0012/cat-facts-api
+        ports:
+        - containerPort: 3000
